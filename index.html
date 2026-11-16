@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Angela</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Space+Mono:wght@400;700&display=block" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="desk-surface">
+    <!-- Top Desk Bar -->
+    <header class="desk-topbar">
+      <div class="desk-badge">
+        <span class="dot-neo"></span>
+        <span>11/16/2026 // 21ST ED.</span>
+      </div>
+      <div class="desk-actions">
+        <button id="btn-back-desk" class="btn-zine hidden" type="button">close binder</button>
+        <span id="sleeve-counter" class="counter-pill hidden">01 / 21</span>
+      </div>
+    </header>
+
+    <!-- VIEW 1: DESK SCENE -->
+    <main id="desk-view" class="desk-view">
+      <div class="desk-layout">
+        <!-- Left column: Folded Seatmate Note + Minsan Angry Stamp -->
+        <div class="desk-props">
+          <article class="desk-note" id="desk-note-card">
+            <div class="washi-tape tape-neo"></div>
+            <button id="toggle-note-btn" class="note-fold-toggle" type="button" aria-expanded="false">
+              <span class="mono-tag" id="desk-note-tab">former seatmate pala</span>
+              <span class="note-hint">click to unfold</span>
+            </button>
+            <div id="desk-note-body" class="note-paper hidden">
+              <h2 id="desk-note-title" class="hand-title"></h2>
+              <p id="desk-note-text" class="hand-body"></p>
+            </div>
+          </article>
+
+          <div class="desk-gadget">
+            <div class="washi-tape tape-pink"></div>
+            <p class="mono-label">SEATMATE VIBE CHECK</p>
+            <p class="gadget-copy">easy to be with. minsan angry.</p>
+            <button id="desk-angry-btn" class="btn-stamp" type="button">
+              poke seatmate (<span id="desk-angry-count">0</span>)
+            </button>
+            <p id="desk-angry-msg" class="mono-small"></p>
+          </div>
+        </div>
+
+        <!-- Right column: Closed Pink Photocard Binder -->
+        <div class="binder-cover-wrap">
+          <button id="open-binder-btn" class="binder-cover" type="button" aria-label="Open 21st birthday photocard binder">
+            <div class="binder-spine">
+              <span class="ring-hole"></span>
+              <span class="ring-hole"></span>
+              <span class="ring-hole"></span>
+            </div>
+            <div class="binder-front">
+              <div class="washi-tape tape-neo-angled"></div>
+              <div class="cover-sticker-21">21</div>
+              <div class="cover-window">
+                <img src="assets/photos/her-concert.jpg" alt="TDS3 Manila concert preview" />
+                <span class="window-label">SSR // TDS3 MNL</span>
+              </div>
+              <div class="cover-title-block">
+                <p class="mono-small">COLLECT BOOK // VOL. 21</p>
+                <h1 class="cover-title">for <span id="cover-name">Angela</span></h1>
+                <p class="hand-sub">from Lixter (former seatmate)</p>
+              </div>
+              <div class="cover-doodles" aria-hidden="true">
+                <!-- Samoyed (Jeno) doodle -->
+                <svg class="doodle-svg" viewBox="0 0 64 64" fill="none">
+                  <path d="M16 26 L12 10 L25 18 Q32 15 39 18 L52 10 L48 26 Q54 34 50 45 Q42 54 32 54 Q22 54 14 45 Q10 34 16 26 Z" fill="#fffdf8" stroke="#1f161a" stroke-width="2.5" stroke-linejoin="round"/>
+                  <path d="M22 33 Q25 30 28 33" stroke="#1f161a" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M36 33 Q39 30 42 33" stroke="#1f161a" stroke-width="2.5" stroke-linecap="round"/>
+                  <ellipse cx="32" cy="39" rx="3" ry="2" fill="#1f161a"/>
+                  <path d="M28 43 Q32 47 36 43" stroke="#1f161a" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <!-- Hamster (Jisung) doodle -->
+                <svg class="doodle-svg" viewBox="0 0 64 64" fill="none">
+                  <circle cx="18" cy="20" r="7" fill="#ffd9e6" stroke="#1f161a" stroke-width="2.5"/>
+                  <circle cx="46" cy="20" r="7" fill="#ffd9e6" stroke="#1f161a" stroke-width="2.5"/>
+                  <ellipse cx="32" cy="36" rx="20" ry="17" fill="#fffdf8" stroke="#1f161a" stroke-width="2.5"/>
+                  <circle cx="25" cy="33" r="2.2" fill="#1f161a"/>
+                  <circle cx="39" cy="33" r="2.2" fill="#1f161a"/>
+                  <circle cx="20" cy="39" r="3.5" fill="#f48fb1" opacity="0.7"/>
+                  <circle cx="44" cy="39" r="3.5" fill="#f48fb1" opacity="0.7"/>
+                  <path d="M30 37 L32 39 L34 37" stroke="#1f161a" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="open-prompt">tap to open binder -></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- VIEW 2: OPEN 2-PAGE BOOK BINDER -->
+    <section id="binder-view" class="binder-view hidden" aria-label="Photocard Binder">
+      <div class="binder-shell">
+        <div id="binder-book" class="binder-book">
+          <div id="binder-page-left" class="binder-page binder-page-left"></div>
+          <div class="binder-center-spine" aria-hidden="true">
+            <span class="metal-ring"></span>
+            <span class="metal-ring"></span>
+            <span class="metal-ring"></span>
+            <span class="metal-ring"></span>
+            <span class="metal-ring"></span>
+            <span class="metal-ring"></span>
+          </div>
+          <div id="binder-page-right" class="binder-page binder-page-right"></div>
+        </div>
+
+        <nav class="binder-nav" aria-label="Binder page navigation">
+          <button id="prev-page-btn" class="btn-zine btn-nav-arrow" type="button">← prev</button>
+          <div id="page-dots" class="page-dots"></div>
+          <button id="next-page-btn" class="btn-zine btn-primary-pink btn-nav-arrow" type="button">next →</button>
+        </nav>
+      </div>
+    </section>
+
+    <!-- MOBILE / PHONE NOTICE -->
+    <div id="mobile-notice" class="mobile-notice" role="dialog" aria-label="Open on laptop notice">
+      <div class="mobile-notice-card">
+        <div class="washi-tape tape-neo"></div>
+        <span class="mono-tag">DESKTOP / LAPTOP ONLY</span>
+        <h2 class="hand-title">buksan mo sa laptop, angela!</h2>
+        <p class="hand-body">mas maganda kasi tingnan sa macbook para buo yung book at hindi bitin. lipat ka muna sa laptop mo pag may time ka, promise worth it eme.</p>
+      </div>
+    </div>
+
+    <!-- VIEW 3: SLEEVE #21 LETTER MODAL -->
+    <div id="letter-modal" class="letter-modal hidden" role="dialog" aria-modal="true" aria-labelledby="letter-heading">
+      <div class="letter-sheet">
+        <div class="washi-tape tape-neo"></div>
+        <button id="close-letter-btn" class="letter-close" type="button" aria-label="Close letter">x</button>
+        <p id="letter-date" class="mono-small"></p>
+        <h2 id="letter-heading" class="hand-title"></h2>
+        <div id="letter-body" class="letter-paragraphs"></div>
+        <p id="letter-signature" class="hand-sign"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/sleeves.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
